@@ -7,6 +7,7 @@ services:
       context: elasticsearch/
       args:
         ELK_VERSION: $ELK_VERSION
+    restart: always
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
       - /usr/share/elasticsearch-data:/usr/share/elasticsearch/data
@@ -22,6 +23,7 @@ services:
       context: kibana/
       args:
         ELK_VERSION: $ELK_VERSION
+    restart: always
     volumes:
       - ./kibana/config/:/usr/share/kibana/config:ro
     ports:
