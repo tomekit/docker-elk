@@ -10,12 +10,11 @@ services:
     restart: always
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+      - ./elasticsearch/config/jvm.options:/etc/elasticsearch/jvm.options:ro
       - /usr/share/elasticsearch-data:/usr/share/elasticsearch/data
     ports:
       - "9200:9200"
       - "9300:9300"
-    environment:
-    - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
     networks:
       - elk
   kibana:
