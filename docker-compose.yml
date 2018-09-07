@@ -10,7 +10,7 @@ services:
     restart: always
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
-      - ./elasticsearch/config/jvm.options:/etc/elasticsearch/jvm.options:ro
+      - ./elasticsearch/config/jvm.options:/usr/share/elasticsearch/config/jvm.options:ro
       - /usr/share/elasticsearch-data:/usr/share/elasticsearch/data
     ports:
       - "9200:9200"
